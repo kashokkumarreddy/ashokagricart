@@ -45,7 +45,7 @@ public class RegistrationServiceImpl implements RegistrationService {
         response.setUserId(savedUser.getId());
         response.setEmail(savedUser.getEmail());
         response.setStatus("SUCCESS");
-        response.setMessage("User registered successfully. Verification email sent");
+        response.setMessage("User registered successfully. Verification email sent!g");
 
         return response;
     }
