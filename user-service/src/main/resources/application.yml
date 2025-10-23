@@ -1,0 +1,32 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: UserService
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ashokagricart_auth
+    username: ${DB_USER:test}
+    password: ${DB_PASSWORD:password}
+    hikari:
+      maximum-pool-size: 10
+      connection-timeout: 30000
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+jwt:
+  secret: ${JWT_SECRET:UHlNQ1J5SXpOek16TXpNek5EVTBNelF6TnpJNU1UYzRNamMyTkRVMk5qZzVNRFk1TURZNU1EUTROVEUzTkRrM05UYzVNRFk0TURZNU1EUTROVEUzTkRrM05UYzVNRFk0}
+  expiration: 86400000
+
+#eureka client
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
